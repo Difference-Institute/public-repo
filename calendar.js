@@ -341,7 +341,7 @@ function updateEvents(day) {
 
     if (events === "") {
         events = `<div class="no-event">
-            <h3>No Availability</h3>
+            <h3>가능한 날짜가 존재하지 않습니다.</h3>
         </div>`;
     }
 
