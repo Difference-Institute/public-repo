@@ -8,7 +8,7 @@ const date = (el = document) => el.querySelector(".date"),
     next = (el = document) => el.querySelectorAll(".next"),
     coachingBtn = (el = document) => el.querySelector(".btn-coaching"),
     eventsContainer = (el = document) =>
-        el.querySelector("#calendar-setup-timeslot"),
+        el.querySelector(".calendar-select_timeslot"),
     calendarDays = (el = document) =>
         el.querySelectorAll(".checkbox-wrapper_day-setup"),
     setupDaysWraper = (el = document) =>
