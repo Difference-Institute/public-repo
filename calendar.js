@@ -216,6 +216,8 @@ function initCalendar(setTodayAsActive = true) {
         days += weekCount >= 6 ? "</div>" : `</div><div class="calendar_row">`;
     }
     daysContainer(counsolerList[0]).innerHTML = days;
+    console.log(daysContainer(counsolerList[0]));
+    console.log(days);
     addListner();
 }
 
