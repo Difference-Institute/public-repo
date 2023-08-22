@@ -1,6 +1,6 @@
 //TODO
 //only show up to 6m
-//testing
+//debugging
 
 const date = (el = document) => el.querySelector(".date"),
     daysContainer = (el = document) => el.querySelector(".days"),
