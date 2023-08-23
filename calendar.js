@@ -1,6 +1,6 @@
 //TODO
 //only show up to 6m
-//testing
+//debugging
 
 const date = (el = document) => el.querySelector(".date"),
     daysContainer = (el = document) => el.querySelector(".days"),
@@ -8,7 +8,7 @@ const date = (el = document) => el.querySelector(".date"),
     next = (el = document) => el.querySelectorAll(".next"),
     coachingBtn = (el = document) => el.querySelector(".btn-coaching"),
     eventsContainer = (el = document) =>
-        el.querySelector("#calendar-setup-timeslot"),
+        el.querySelector(".calendar-select_timeslot"),
     calendarDays = (el = document) =>
         el.querySelectorAll(".checkbox-wrapper_day-setup"),
     setupDaysWraper = (el = document) =>
@@ -216,8 +216,6 @@ function initCalendar(setTodayAsActive = true) {
         days += weekCount >= 6 ? "</div>" : `</div><div class="calendar_row">`;
     }
     daysContainer(counsolerList[0]).innerHTML = days;
-    console.log(daysContainer(counsolerList[0]));
-    console.log(days);
     addListner();
 }
 
