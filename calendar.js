@@ -1,6 +1,5 @@
 //TODO
 //only show up to 6m
-//debugging
 
 const date = (el = document) => el.querySelector(".date"),
     daysContainer = (el = document) => el.querySelector(".days"),
@@ -342,7 +341,7 @@ function updateEvents(day) {
 
     if (events === "") {
         events = `<div class="no-event">
-            <h3>No Availability</h3>
+            <h3>가능한 날짜가 존재하지 않습니다.</h3>
         </div>`;
     }
 
@@ -424,13 +423,13 @@ function min30(day) {
         if (weekSlotsArr[day - 1][i] === "n" || overlapsWithEvent) {
             continue;
         }
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 1}', this)"
             id="${i}"
             name="${slotTime}"
             value="${i}"
-            class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+            class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
@@ -501,13 +500,13 @@ function min60(day) {
             continue;
         }
 
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 2}', this)"
                 id="${i}"
                 name="${slotTime}"
                 value="${i}"
-                class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+                class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
@@ -577,13 +576,13 @@ function min90(day) {
             continue;
         }
 
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 3}', this)"
                 id="${i}"
                 name="${slotTime}"
                 value="${i}"
-                class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+                class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
@@ -653,13 +652,13 @@ function min120(day) {
             continue;
         }
 
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 4}', this)"
                 id="${i}"
                 name="${slotTime}"
                 value="${i}"
-                class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+                class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
