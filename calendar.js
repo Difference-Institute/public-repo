@@ -7,7 +7,7 @@ const date = (el = document) => el.querySelector(".date"),
     next = (el = document) => el.querySelectorAll(".next"),
     coachingBtn = (el = document) => el.querySelector(".btn-coaching"),
     eventsContainer = (el = document) =>
-        el.querySelector(".calendar-setup-timeslot"),
+        el.querySelector(".calendar-select_timeslot"),
     calendarDays = (el = document) =>
         el.querySelectorAll(".checkbox-wrapper_day-setup"),
     setupDaysWraper = (el = document) =>
@@ -62,10 +62,7 @@ document.querySelectorAll(".add").forEach((el) => {
 });
 function AddNumber(numberToAdd, element, i) {
     let tempNum = Number(element.innerText);
-    const priceStr = subtotalNumList[i].firstElementChild.innerText.replace(
-        /[^0-9]/g,
-        ""
-    ); // Remove non-numeric characters
+    const priceStr = subtotalNumList[i].innerText.replace(/[^0-9]/g, ""); // Remove non-numeric characters
     let price = parseInt(priceStr); // Convert to integer
     if (tempNum > 1 || numberToAdd > 0) {
         tempNum += numberToAdd;
@@ -74,9 +71,7 @@ function AddNumber(numberToAdd, element, i) {
     }
     element.innerText = tempNum;
     localStorage.setItem("timeSelectedAmount", `${tempNum}`);
-    subtotalNumList[
-        i
-    ].firstElementChild.innerText = `${price.toLocaleString()}원`;
+    subtotalNumList[i].innerText = `${price.toLocaleString()}원`;
 }
 
 calendarDays(counsolerList[0]).forEach((day) => {
@@ -423,13 +418,13 @@ function min30(day) {
         if (weekSlotsArr[day - 1][i] === "n" || overlapsWithEvent) {
             continue;
         }
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 1}', this)"
             id="${i}"
             name="${slotTime}"
             value="${i}"
-            class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+            class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
@@ -500,13 +495,13 @@ function min60(day) {
             continue;
         }
 
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 2}', this)"
                 id="${i}"
                 name="${slotTime}"
                 value="${i}"
-                class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+                class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
@@ -576,13 +571,13 @@ function min90(day) {
             continue;
         }
 
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 3}', this)"
                 id="${i}"
                 name="${slotTime}"
                 value="${i}"
-                class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+                class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
@@ -652,13 +647,13 @@ function min120(day) {
             continue;
         }
 
-        events += `<div class="w-checkbox checkbox-wrapper">
+        events += `<div class="w-checkbox checkbox-wrapper" _mstvisible="8">
             <div onclick="dateCheck('${day - 1}', '${i}','${i + 4}', this)"
                 id="${i}"
                 name="${slotTime}"
                 value="${i}"
-                class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-6 ${checked}">
-                <div class="checkbox-label-7 w-form-label">${slotTime} - ${endTime}</div>
+                class="w-checkbox-input w-checkbox-input--inputType-custom calender-setup-btn ${checked}">
+                <div class="calendar_checkbox-text w-form-label">${slotTime} - ${endTime}</div>
             </div>
         </div>`;
     }
