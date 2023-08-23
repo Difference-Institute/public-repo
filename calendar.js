@@ -346,8 +346,6 @@ function updateEvents(day) {
         </div>`;
     }
 
-    console.log(eventsContainer(counsolerList[0]));
-    console.log(events);
     eventsContainer(counsolerList[0]).innerHTML = events;
 }
 
