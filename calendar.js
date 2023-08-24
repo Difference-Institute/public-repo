@@ -62,9 +62,10 @@ document.querySelectorAll(".add").forEach((el) => {
 });
 function AddNumber(numberToAdd, element, i) {
     let tempNum = Number(element.innerText);
-    const priceStr = subtotalNumList[i].innerText
-        ? subtotalNumList[i].innerText.replace(/[^0-9]/g, "")
-        : "0";
+    const priceStr =
+        tempNum == 1
+            ? localStorage.getItem("personalCoachingPrice")
+            : subtotalNumList[i].innerText.replace(/[^0-9]/g, "");
     let price = parseInt(priceStr); // Convert to integer
     if (tempNum > 1 || numberToAdd > 0) {
         tempNum += numberToAdd;
@@ -84,9 +85,13 @@ calendarTimes(counsolerList[0]).forEach((timeslot) => {
 });
 
 const availability = (i) => {
-    const found = weekSlotsArr[i - 1].find((element) => element === "a");
-    if (found != null) return true;
-    else return false;
+    try {
+        const found = weekSlotsArr[i - 1].find((element) => element === "a");
+        if (found != null) return true;
+        else return false;
+    } catch (error) {
+        return false;
+    }
 };
 
 //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
