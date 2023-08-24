@@ -62,7 +62,9 @@ document.querySelectorAll(".add").forEach((el) => {
 });
 function AddNumber(numberToAdd, element, i) {
     let tempNum = Number(element.innerText);
-    const priceStr = subtotalNumList[i].innerText.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+    const priceStr = subtotalNumList[i].innerText
+        ? subtotalNumList[i].innerText.replace(/[^0-9]/g, "")
+        : "0";
     let price = parseInt(priceStr); // Convert to integer
     if (tempNum > 1 || numberToAdd > 0) {
         tempNum += numberToAdd;
