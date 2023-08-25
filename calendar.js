@@ -43,7 +43,7 @@ let minSetVal = 0;
 let slotDay = new Date().getDay();
 const checkoutNumList = (new Array(...document.querySelectorAll(
     ".checkout-qty-count"
-))).filter( x => x.firstElementChild);
+))).filter( x => x.firstElementChild !== null);
 
 const subtotalNumList = document.querySelectorAll(".checkout-item-price");
 for (let i = 0; i < checkoutNumList.length; i++) {
