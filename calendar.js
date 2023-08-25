@@ -42,8 +42,8 @@ let timeSelected;
 let minSetVal = 0;
 let slotDay = new Date().getDay();
 const checkoutNumList = document.querySelectorAll(
-    ".checkout-item_qty-wrapper .checkout-qty-count"
-);
+    ".checkout-qty-count"
+).filter( x => x.firstElementChild);
 const subtotalNumList = document.querySelectorAll(".checkout-item-price");
 for (let i = 0; i < checkoutNumList.length; i++) {
     checkoutNumList[i].style.pointerEvents = "none";
@@ -74,7 +74,7 @@ function AddNumber(numberToAdd, element, i) {
         if (numberToAdd > 0) price *= 2;
         else price /= 2;
     }
-    element.innerText = tempNum;
+    element?.innerText = tempNum;
     localStorage.setItem("timeSelectedAmount", `${tempNum}`);
     subtotalNumList[i].innerText = `${price.toLocaleString()}원`;
 }
