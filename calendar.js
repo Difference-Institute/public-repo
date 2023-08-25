@@ -74,7 +74,7 @@ function AddNumber(numberToAdd, element, i) {
         if (numberToAdd > 0) price *= 2;
         else price /= 2;
     }
-    element?.innerText = tempNum;
+    element.innerText = tempNum;
     localStorage.setItem("timeSelectedAmount", `${tempNum}`);
     subtotalNumList[i].innerText = `${price.toLocaleString()}원`;
 }
