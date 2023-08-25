@@ -41,7 +41,9 @@ const counsolerList = [];
 let timeSelected;
 let minSetVal = 0;
 let slotDay = new Date().getDay();
-const checkoutNumList = document.querySelectorAll(".checkout-qty-count");
+const checkoutNumList = document.querySelectorAll(
+    ".checkout-item_qty-wrapper .checkout-qty-count"
+);
 const subtotalNumList = document.querySelectorAll(".checkout-item-price");
 for (let i = 0; i < checkoutNumList.length; i++) {
     checkoutNumList[i].style.pointerEvents = "none";
@@ -65,7 +67,7 @@ function AddNumber(numberToAdd, element, i) {
     const priceStr =
         tempNum == 1
             ? localStorage.getItem("personalCoachingPrice")
-            : subtotalNumList[i].innerText.replace(/[^0-9]/g, "");
+            : subtotalNumList[i].innerText?.replace(/[^0-9]/g, "");
     let price = parseInt(priceStr); // Convert to integer
     if (tempNum > 1 || numberToAdd > 0) {
         tempNum += numberToAdd;
