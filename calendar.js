@@ -41,10 +41,7 @@ const counsolerList = [];
 let timeSelected;
 let minSetVal = 0;
 let slotDay = new Date().getDay();
-const checkoutNumList = (new Array(...document.querySelectorAll(
-    ".checkout-qty-count"
-))).filter( x => x.firstElementChild !== null);
-
+const checkoutNumList = document.querySelectorAll(".checkout-qty-count");
 const subtotalNumList = document.querySelectorAll(".checkout-item-price");
 for (let i = 0; i < checkoutNumList.length; i++) {
     checkoutNumList[i].style.pointerEvents = "none";
